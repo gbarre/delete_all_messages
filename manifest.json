@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Delete All Messages",
+  "version": "1.0",
+  "applications": {
+    "gecko": {
+      "id": "delete_all_messages@jrmv.net",
+      "strict_min_version": "66.0"
+    }
+  },
+  "description": "Supprime définitivement tous les mails d’un dossier.",
+  "permissions": [
+    "accountsFolders",
+    "accountsRead",
+    "menus",
+    "messagesRead",
+    "messagesMove",
+    "messagesDelete"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
