@@ -9,18 +9,19 @@ jobs:
   build-and-release:
     runs-on: ubuntu-latest
 
+    env:
+      VERSION: ${{ github.ref_name }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Create ZIP archive
         run: |
-          export VERSION=${GITHUB_REF#refs/tags/}
           zip -r "delete_all_messages-${VERSION}.zip" manifest.json background.js
 
       - name: Verify ZIP file exists
         run: |
-          export VERSION=${GITHUB_REF#refs/tags/}
           if [ ! -f "delete_all_messages-${VERSION}.zip" ]; then
             echo "Error: delete_all_messages-${VERSION}.zip not found!"
             exit 1
