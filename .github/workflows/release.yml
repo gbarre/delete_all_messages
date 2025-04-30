@@ -15,12 +15,12 @@ jobs:
 
       - name: Create ZIP archive
         run: |
-          VERSION=${GITHUB_REF#refs/tags/}
+          export VERSION=${GITHUB_REF#refs/tags/}
           zip -r "delete_all_messages-${VERSION}.zip" manifest.json background.js
 
       - name: Verify ZIP file exists
         run: |
-          VERSION=${GITHUB_REF#refs/tags/}
+          export VERSION=${GITHUB_REF#refs/tags/}
           if [ ! -f "delete_all_messages-${VERSION}.zip" ]; then
             echo "Error: delete_all_messages-${VERSION}.zip not found!"
             exit 1
