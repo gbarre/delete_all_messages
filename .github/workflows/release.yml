@@ -15,9 +15,19 @@ jobs:
 
       - name: Create ZIP archive
         run: |
-          zip -r delete_all_messages.zip manifest.json background.js
+          VERSION=${GITHUB_REF#refs/tags/}
+          zip -r "delete_all_messages-${VERSION}.zip" manifest.json background.js
 
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
+      - name: Verify ZIP file exists
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/}
+          if [ ! -f "delete_all_messages-${VERSION}.zip" ]; then
+            echo "Error: delete_all_messages-${VERSION}.zip not found!"
+            exit 1
+          fi
+
+      - name: Upload Release
+        uses: ncipollo/release-action@v1.13.0
         with:
-          files: delete_all_messages.zip
+          artifacts: "delete_all_messages-${VERSION}.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
