@@ -1,0 +1,12 @@
+{
+  "contextTitle": {
+    "message": "Delete all messages (permanently)",
+    "description": "Menu item to delete all messages in a folder"
+  },
+  "extensionName": {
+    "message": "Delete All Messages"
+  },
+  "extensionDescription": {
+    "message": "Permanently deletes all emails in a folder."
+  }
+}

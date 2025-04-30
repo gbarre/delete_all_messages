@@ -1,0 +1,12 @@
+{
+  "contextTitle": {
+    "message": "Supprimer tous les messages (définitivement)",
+    "description": "Entrée de menu pour supprimer tous les messages d’un dossier"
+  },
+  "extensionName": {
+    "message": "Delete All Messages"
+  },
+  "extensionDescription": {
+    "message": "Supprime définitivement tous les mails d’un dossier."
+  }
+}

@@ -1,7 +1,7 @@
 async function main() {
   messenger.menus.create({
     id: "delete_all_permanent",
-    title: "Supprimer tous les messages (définitivement)",
+    title: messenger.i18n.getMessage("contextTitle"),
     contexts: ["folder_pane"],
     async onclick(info) {
       let page = await messenger.messages.list(info.selectedFolder);
