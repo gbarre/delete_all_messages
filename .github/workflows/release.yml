@@ -29,5 +29,5 @@ jobs:
       - name: Upload Release
         uses: ncipollo/release-action@v1.13.0
         with:
-          artifacts: "delete_all_messages-${env.VERSION}.zip"
+          artifacts: "delete_all_messages-${{ env.VERSION }}.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
